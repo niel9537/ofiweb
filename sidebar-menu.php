@@ -318,27 +318,13 @@ if ($_SESSION['hak_akses'] == 'Gudang') { ?>
 		<?php
 		}
 
-		// jika menu Barang Masuk dipilih, menu Barang Masuk aktif
-		if ($_GET["module"] == "barang_masuk" || $_GET["module"] == "form_barang_masuk") { ?>
+		if ($_GET["module"] == "barang_keluar" || $_GET["module"] == "form_barang_keluar") { ?>
 			<li class="active treeview">
 				<a href="javascript:void(0);">
 					<i class="fa fa-clone"></i> <span>Transaksi</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li class="active"><a href="?module=barang_masuk"><i class="fa fa-circle-o"></i> Barang Masuk</a></li>
-					<li><a href="?module=barang_keluar"><i class="fa fa-circle-o"></i> Barang Keluar</a></li>
-				</ul>
-			</li>
-		<?php
-		}
-		// jika menu Barang Keluar dipilih, menu Barang Keluar aktif
-		elseif ($_GET["module"] == "barang_keluar" || $_GET["module"] == "form_barang_keluar") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-clone"></i> <span>Transaksi</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=barang_masuk"><i class="fa fa-circle-o"></i> Barang Masuk</a></li>
+
 					<li class="active"><a href="?module=barang_keluar"><i class="fa fa-circle-o"></i> Barang Keluar</a></li>
 				</ul>
 			</li>
@@ -351,7 +337,7 @@ if ($_SESSION['hak_akses'] == 'Gudang') { ?>
 					<i class="fa fa-clone"></i> <span>Transaksi</span> <i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="?module=barang_masuk"><i class="fa fa-circle-o"></i> Barang Masuk</a></li>
+
 					<li><a href="?module=barang_keluar"><i class="fa fa-circle-o"></i> Barang Keluar</a></li>
 				</ul>
 			</li>
