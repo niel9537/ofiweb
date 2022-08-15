@@ -290,21 +290,6 @@ elseif ($_SESSION['hak_akses'] == 'Manajer') { ?>
 			</li>
 		<?php
 		}
-
-		// jika menu ubah password dipilih, menu ubah password aktif
-		if ($_GET["module"] == "password") { ?>
-			<li class="active">
-				<a href="?module=password"><i class="fa fa-lock"></i> Ubah Password</a>
-			</li>
-		<?php
-		}
-		// jika tidak, menu ubah password tidak aktif
-		else { ?>
-			<li>
-				<a href="?module=password"><i class="fa fa-lock"></i> Ubah Password</a>
-			</li>
-		<?php
-		}
 		?>
 	</ul>
 	<!--sidebar menu end-->
@@ -329,63 +314,6 @@ if ($_SESSION['hak_akses'] == 'Gudang') { ?>
 		else { ?>
 			<li>
 				<a href="?module=home"><i class="fa fa-home"></i> Beranda </a>
-			</li>
-		<?php
-		}
-
-		// jika menu Data Barang dipilih, menu Data Barang aktif
-		if ($_GET["module"] == "barang" || $_GET["module"] == "form_barang") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-folder"></i> <span>Data Master</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li class="active"><a href="?module=barang"><i class="fa fa-circle-o"></i> Data Barang</a></li>
-					<li><a href="?module=jenis"><i class="fa fa-circle-o"></i> Jenis Barang</a></li>
-					<li><a href="?module=satuan"><i class="fa fa-circle-o"></i> Satuan</a></li>
-				</ul>
-			</li>
-		<?php
-		}
-		// jika menu Jenis Barang dipilih, menu Jenis Barang aktif
-		elseif ($_GET["module"] == "jenis" || $_GET["module"] == "form_jenis") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-folder"></i> <span>Data Master</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=barang"><i class="fa fa-circle-o"></i> Data Barang</a></li>
-					<li class="active"><a href="?module=jenis"><i class="fa fa-circle-o"></i> Jenis Barang</a></li>
-					<li><a href="?module=satuan"><i class="fa fa-circle-o"></i> Satuan</a></li>
-				</ul>
-			</li>
-		<?php
-		}
-		// jika menu Satuan dipilih, menu Satuan aktif
-		elseif ($_GET["module"] == "satuan" || $_GET["module"] == "form_satuan") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-folder"></i> <span>Data Master</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=barang"><i class="fa fa-circle-o"></i> Data Barang</a></li>
-					<li><a href="?module=jenis"><i class="fa fa-circle-o"></i> Jenis Barang</a></li>
-					<li class="active"><a href="?module=satuan"><i class="fa fa-circle-o"></i> Satuan</a></li>
-				</ul>
-			</li>
-		<?php
-		}
-		// jika menu Data Master tidak dipilih, menu Data Master tidak aktif
-		else { ?>
-			<li class="treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-folder"></i> <span>Data Master</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=barang"><i class="fa fa-circle-o"></i> Data Barang</a></li>
-					<li><a href="?module=jenis"><i class="fa fa-circle-o"></i> Jenis Barang</a></li>
-					<li><a href="?module=satuan"><i class="fa fa-circle-o"></i> Satuan</a></li>
-				</ul>
 			</li>
 		<?php
 		}
@@ -430,77 +358,7 @@ if ($_SESSION['hak_akses'] == 'Gudang') { ?>
 		<?php
 		}
 
-		// jika menu Laporan Stok Barang dipilih, menu Laporan Stok Barang aktif
-		if ($_GET["module"] == "lap_stok") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li class="active"><a href="?module=lap_stok"><i class="fa fa-circle-o"></i> Stok Barang</a></li>
-					<li><a href="?module=lap_barang_masuk"><i class="fa fa-circle-o"></i> Barang Masuk</a></li>
-					<li><a href="?module=lap_barang_keluar"><i class="fa fa-circle-o"></i> Barang Keluar</a></li>
-				</ul>
-			</li>
-		<?php
-		}
-		// jika menu Laporan Barang Masuk dipilih, menu Laporan Barang Masuk aktif
-		elseif ($_GET["module"] == "lap_barang_masuk") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=lap_stok"><i class="fa fa-circle-o"></i> Stok Barang</a></li>
-					<li class="active"><a href="?module=lap_barang_masuk"><i class="fa fa-circle-o"></i> Barang Masuk</a></li>
-					<li><a href="?module=lap_barang_keluar"><i class="fa fa-circle-o"></i> Barang Keluar</a></li>
-				</ul>
-			</li>
-		<?php
-		}
-		// jika menu Laporan Barang Keluar dipilih, menu Laporan Barang Keluar aktif
-		elseif ($_GET["module"] == "lap_barang_keluar") { ?>
-			<li class="active treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=lap_stok"><i class="fa fa-circle-o"></i> Stok Barang</a></li>
-					<li><a href="?module=lap_barang_masuk"><i class="fa fa-circle-o"></i> Barang Masuk</a></li>
-					<li class="active"><a href="?module=lap_barang_keluar"><i class="fa fa-circle-o"></i> Barang Keluar</a></li>
-				</ul>
-			</li>
-		<?php
-		}
-		// jika menu Laporan tidak dipilih, menu Laporan tidak aktif
-		else { ?>
-			<li class="treeview">
-				<a href="javascript:void(0);">
-					<i class="fa fa-file-text"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="?module=lap_stok"><i class="fa fa-circle-o"></i> Stok Barang</a></li>
-					<li><a href="?module=lap_barang_masuk"><i class="fa fa-circle-o"></i> Barang Masuk</a></li>
-					<li><a href="?module=lap_barang_keluar"><i class="fa fa-circle-o"></i> Barang Keluar</a></li>
-				</ul>
-			</li>
-		<?php
-		}
 
-		// jika menu ubah password dipilih, menu ubah password aktif
-		if ($_GET["module"] == "password") { ?>
-			<li class="active">
-				<a href="?module=password"><i class="fa fa-lock"></i> Ubah Password</a>
-			</li>
-		<?php
-		}
-		// jika tidak, menu ubah password tidak aktif
-		else { ?>
-			<li>
-				<a href="?module=password"><i class="fa fa-lock"></i> Ubah Password</a>
-			</li>
-		<?php
-		}
 		?>
 	</ul>
 	<!--sidebar menu end-->
