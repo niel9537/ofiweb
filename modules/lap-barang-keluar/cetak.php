@@ -126,14 +126,23 @@ $filename = "LAPORAN DATA BARANG KELUAR.pdf"; //ubah untuk menentukan nama file 
 //==========================================================================================================
 $content = ob_get_clean();
 $content = '<page style="font-family: freeserif">' . ($content) . '</page>';
-// panggil library html2pdf
-require_once('../../assets/plugins/html2pdf_v4.03/html2pdf.class.php');
-try {
-    $html2pdf = new HTML2PDF('P', 'F4', 'en', false, 'ISO-8859-15', array(10, 10, 10, 10));
-    $html2pdf->setDefaultFont('Arial');
-    $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
-    $html2pdf->Output($filename);
-} catch (HTML2PDF_exception $e) {
-    echo $e;
-}
+
+require_once('../../vendor/autoload.php');
+
+$mpdf = new \Mpdf\Mpdf();
+$mpdf->WriteHTML($content);
+$mpdf->Output();
+
+
+
+// // panggil library html2pdf
+// require_once('../../assets/plugins/html2pdf_v4.03/html2pdf.class.php');
+// try {
+//     $html2pdf = new HTML2PDF('P', 'F4', 'en', false, 'ISO-8859-15', array(10, 10, 10, 10));
+//     $html2pdf->setDefaultFont('Arial');
+//     $html2pdf->writeHTML($content, isset($_GET['vuehtml']));
+//     $html2pdf->Output($filename);
+// } catch (HTML2PDF_exception $e) {
+//     echo $e;
+// }
 ?>
